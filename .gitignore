@@ -1,0 +1,16 @@
+# Data files — never push to GitHub (too large)
+data/
+*.7z
+*.parquet
+*.csv
+
+# Python environment
+venv/
+__pycache__/
+*.pyc
+*.pyo
+.env
+
+# OS files
+.DS_Store
+Thumbs.db
