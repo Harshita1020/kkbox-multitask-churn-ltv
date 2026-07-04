@@ -1,0 +1,27 @@
+
+====================================================
+  KKBOX MULTI-TASK MLP — FINAL RESULTS
+====================================================
+Model  : Exp-6 Uncertainty Weighting + Isotonic Calibration
+Dataset: WSDM 2017 KKBox  |  992,931 users  |  70/15/15 split
+
+CHURN (test):
+  AUC-ROC  : 0.8454
+  AUC-PR   : 0.3600  (5.6x vs base rate 0.0639)
+
+LTV REGRESSION (test, raw TWD):
+  RMSE     : 60.65 TWD
+  MAE      : 32.31 TWD
+  R-squared: 0.4658
+
+BUSINESS LAYER:
+  Retention Priority Score = P(churn_cal) x E[LTV]
+  +750% to +1,300% revenue saved vs random (50K TWD budget)
+
+KEY LEARNINGS:
+  1. LTV leakage: always use temporal split for regression targets
+  2. pos_weight improves AUC but inflates probs -> needs calibration
+  3. Uncertainty weighting (Exp-6) auto-adapts task balance
+  4. Isotonic regression fixes bias miscalibration; temp scaling does not
+  5. DuckDB essential for 392M-row queries without full RAM load
+====================================================

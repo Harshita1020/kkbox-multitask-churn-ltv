@@ -1,0 +1,6 @@
+=== Budget Allocation Simulation ===
+Budget 50,000 TWD | Voucher 50 TWD | 1,000 interventions | 30% success rate
+
+Model priority ranking  :       23,802 TWD expected revenue saved
+Random selection        :        3,168 TWD  (+651.2% vs model)
+Churn-prob-only ranking :          637 TWD  (+3637.3% vs model)
